@@ -1,4 +1,12 @@
 {
     "workbench.colorTheme": "One Dark Pro",
-    "workbench.sideBar.location": "right"
+    "workbench.sideBar.location": "right",
+    "window.zoomLevel": 0,
+    "emmet.syntaxProfiles": {
+        "javascript": "jsx",
+        "xml": {
+            "attr_quotes": "single"
+        }
+    },
+    "emmet.triggerExpansionOnTab": true
 }

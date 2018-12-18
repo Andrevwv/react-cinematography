@@ -1,0 +1,72 @@
+[2018-12-17 14:41:52.669] [sharedprocess] [info] main {"machineId":"32bb7b4cfa401785324cb23b7bc27605939798aafce5924984ed680bdc653e58"}
+[2018-12-17 14:41:52.728] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:52.757] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:52.758] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:52.764] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:52.788] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:52.806] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-17 14:41:52.810] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-17 14:41:52.812] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-17 14:41:54.843] [sharedprocess] [info] Installing extension: Material-theme
+[2018-12-17 14:41:54.853] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:55.781] [sharedprocess] [info] Downloaded extension: Material-theme /tmp/f41c0d35-326e-439e-890b-2d691ee22ea3
+[2018-12-17 14:41:55.807] [sharedprocess] [info] Extracted extension to /home/andrew/.vscode/extensions/.zhuangtongfa.material-theme-2.18.1: zhuangtongfa.material-theme-2.18.1
+[2018-12-17 14:41:55.807] [sharedprocess] [info] Renamed to /home/andrew/.vscode/extensions/zhuangtongfa.material-theme-2.18.1
+[2018-12-17 14:41:55.807] [sharedprocess] [info] Installation completed. zhuangtongfa.material-theme-2.18.1
+[2018-12-17 14:41:55.816] [sharedprocess] [info] Extensions installed successfully: zhuangtongfa.material-theme
+[2018-12-17 14:41:55.932] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:55.947] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-17 14:41:59.178] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:59.181] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:59.185] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:41:59.239] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-17 14:41:59.242] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-17 14:41:59.517] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:42:32.672] [sharedprocess] [info] Starting to clean up unused language packs.
+[2018-12-17 14:42:32.674] [sharedprocess] [info] Skipping directory b7bed61c66de9d7bddacb3a8fe1ec728.ru. Language pack still in use.
+[2018-12-17 14:46:59.578] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:51:59.595] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 14:56:59.613] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:01:59.628] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:06:59.645] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:11:59.668] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:16:59.689] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:21:59.705] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:26:59.725] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:31:59.744] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:36:59.759] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:41:59.926] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:46:59.942] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:51:59.956] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 15:56:59.973] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:01:59.995] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:07:00.013] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:12:00.025] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:17:00.037] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:22:00.054] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:27:00.068] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:32:00.082] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:37:00.101] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:42:00.273] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:47:00.287] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:52:00.297] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 16:57:00.311] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:02:00.329] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:07:00.339] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:12:00.356] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:17:00.370] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:22:00.385] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:27:00.396] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:32:00.413] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:37:00.425] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:42:00.592] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:47:00.609] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:52:00.624] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 17:57:00.640] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:02:00.658] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:07:00.674] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:12:00.688] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:17:00.706] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:22:00.724] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:27:00.738] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-17 18:32:00.755] [sharedprocess] [info] Scanned user extensions: 9

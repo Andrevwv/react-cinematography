@@ -1,0 +1,39 @@
+[Info  - 12:29:20] Using tsserver from: /usr/share/code/resources/app/extensions/node_modules/typescript/lib
+[Info  - 12:29:20] Forking TSServer
+[Info  - 12:29:20] Started TSServer
+[Error  - 13:07:25] 'completionEntryDetails' request failed with error.
+Error processing request. Cannot read property 'kind' of undefined
+TypeError: Cannot read property 'kind' of undefined
+    at getRootDeclaration (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:10562:21)
+    at Object.isCatchClauseVariableDeclarationOrBindingElement (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:8532:20)
+    at getTypeOfVariableOrParameterOrPropertyWorker (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:34904:20)
+    at getTypeOfVariableOrParameterOrProperty (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:34885:48)
+    at getTypeOfSymbol (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:35168:24)
+    at getTypeOfSymbolAtLocation (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:44572:20)
+    at Object.getTypeOfSymbolAtLocation (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:30282:35)
+    at Object.getSymbolDisplayPartsDocumentationAndSymbolKind (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:102104:97)
+    at /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:94029:41
+    at Object.runWithCancellationToken (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:30523:28)
+    at createCompletionDetailsForSymbol (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:94028:30)
+    at Object.getCompletionEntryDetails (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:94010:28)
+    at Object.getCompletionEntryDetails (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:114823:35)
+    at /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:122634:57
+    at Object.mapDefined (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:578:30)
+    at IOSession.Session.getCompletionEntryDetails (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:122632:33)
+    at Session.handlers.ts.createMapFromTemplate._a.(anonymous function) (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:121674:61)
+    at /usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:123086:88
+    at IOSession.Session.executeWithRequestId (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:123077:28)
+    at IOSession.Session.executeCommand (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:123086:33)
+    at IOSession.Session.onMessage (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:123106:35)
+    at Interface.<anonymous> (/usr/share/code/resources/app/extensions/node_modules/typescript/lib/tsserver.js:124369:27)
+    at emitOne (events.js:116:13)
+    at Interface.emit (events.js:211:7)
+    at Interface._onLine (readline.js:282:10)
+    at Interface._normalWrite (readline.js:424:12)
+    at Socket.ondata (readline.js:141:10)
+    at emitOne (events.js:116:13)
+    at Socket.emit (events.js:211:7)
+    at addChunk (_stream_readable.js:263:12)
+    at readableAddChunk (_stream_readable.js:250:11)
+    at Socket.Readable.push (_stream_readable.js:208:10)
+    at Pipe.onread (net.js:594:20)

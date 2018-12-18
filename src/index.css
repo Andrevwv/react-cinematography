@@ -2,6 +2,12 @@ html {
   font-size: 100%;
 }
 
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+
 body {
   margin: 0;
   padding: 0;
@@ -14,3 +20,5 @@ body {
 button:disabled {
   opacity: 0.5;
 }
+
+
