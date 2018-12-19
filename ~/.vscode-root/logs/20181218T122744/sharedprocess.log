@@ -71,3 +71,50 @@
 [2018-12-18 16:57:54.619] [sharedprocess] [info] Scanned user extensions: 9
 [2018-12-18 17:02:54.638] [sharedprocess] [info] Scanned user extensions: 9
 [2018-12-18 17:07:54.660] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:12:54.675] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:17:54.685] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:22:54.696] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:27:54.862] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:32:54.880] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:37:54.899] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:42:54.918] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:47:54.931] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:49:53.395] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:49:53.397] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:49:53.401] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:49:53.451] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-18 17:49:53.455] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-18 17:49:53.558] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:49:55.413] [sharedprocess] [info] Installing extension: prettier-vscode
+[2018-12-18 17:49:55.418] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:03.294] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:03.303] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:03.305] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:03.369] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-18 17:50:03.373] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-18 17:50:03.578] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:17.279] [sharedprocess] [info] Downloaded extension: prettier-vscode /tmp/6886f699-4bd5-4fdd-8a18-b8e7854690f9
+[2018-12-18 17:50:22.439] [sharedprocess] [info] Extracted extension to /home/andrew/.vscode/extensions/.esbenp.prettier-vscode-1.7.3: esbenp.prettier-vscode-1.7.3
+[2018-12-18 17:50:22.439] [sharedprocess] [info] Renamed to /home/andrew/.vscode/extensions/esbenp.prettier-vscode-1.7.3
+[2018-12-18 17:50:22.439] [sharedprocess] [info] Installation completed. esbenp.prettier-vscode-1.7.3
+[2018-12-18 17:50:22.461] [sharedprocess] [info] Extensions installed successfully: esbenp.prettier-vscode
+[2018-12-18 17:50:22.575] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:22.577] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:50:22.602] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-18 17:50:22.604] [sharedprocess] [info] Scanned system extensions: 71
+[2018-12-18 17:52:54.947] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:55:03.623] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 17:57:54.968] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:00:03.640] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:02:54.987] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:05:03.652] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:07:55.006] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:10:03.669] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:12:55.015] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:15:03.681] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:17:55.031] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:20:03.689] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:22:55.052] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:25:03.701] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:27:55.455] [sharedprocess] [info] Scanned user extensions: 9
+[2018-12-18 18:30:03.718] [sharedprocess] [info] Scanned user extensions: 9

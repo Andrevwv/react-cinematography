@@ -500,3 +500,5 @@
     at file:///usr/share/code/resources/app/out/vs/workbench/workbench.main.js:284:55
     at _combinedTickCallback (internal/process/next_tick.js:131:7)
     at process._tickCallback (internal/process/next_tick.js:180:9)
+[2018-12-18 17:15:47.876] [renderer1] [error] Произошла неизвестная ошибка. Подробные сведения см. в журнале.
+[2018-12-18 18:23:25.857] [renderer1] [error] Произошла неизвестная ошибка. Подробные сведения см. в журнале.

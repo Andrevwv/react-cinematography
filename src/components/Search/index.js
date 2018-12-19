@@ -1,31 +1,28 @@
 import React from 'react'
 import './Search.scss'
 import searchIcon from './search.svg'
+import searchRequest from '../../actions/searchRequest'
+import changeSearchInput from '../../actions/changeSearchInput'
 import { Link } from 'react-router-dom'
+import store from '../../store'
+import { connect } from 'react-redux'
+
 
 class Search extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            searchPhrase: ''
-        }
-    }
 
     onInputChange = (event) => {
-        this.setState({
-            searchPhrase: event.target.value
-        })
+        this.props.changeSearchInput(event.target.value);
     }
 
     onFormSubmit = () => {
-        console.log(this.state.searchPhrase);
     }
 
     render() {
-        const currentPath = `/search-results/${this.state.searchPhrase}`
+        // const currentPath = `/search-results/${this.state.searchPhrase}`
+        const currentPath = `/search-results/${this.props.input}`
         return (
             <form className="search">
-                <input className="search__input" placeholder="Search..." type="text" value={this.state.searchPhrase} onChange={this.onInputChange}></input>
+                <input className="search__input" placeholder="Search..." type="text" value={this.props.input} onChange={this.onInputChange}></input>
                 <Link className="nav-item" to={currentPath}>
                     <button className="search__btn" onClick={this.onFormSubmit}>
                         <img src={searchIcon} alt="search icon">
@@ -36,5 +33,21 @@ class Search extends React.Component {
         )
     }
 }
+const mapStateToProps = store => {
+  return {
+    phrase: store.phrase.searchPhrase,
+    input: store.input.searchInput
+  }
+}
 
-export default Search
+const mapDispatchToProps = dispatch => {
+  return {
+    searchRequest: phrase => dispatch(searchRequest(phrase)),
+    changeSearchInput: input => dispatch(changeSearchInput(input))
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Search)

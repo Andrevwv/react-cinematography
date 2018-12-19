@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux'
-import counter from './counter'
+import searchPhrase from './searchPhrase'
+import searchInput from './searchInput'
 
 export default combineReducers({
-  counter
+  phrase: searchPhrase,
+  input: searchInput
 })

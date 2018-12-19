@@ -1,8 +1,8 @@
-export const SEARCH_REQUEST = 'SEARCH_REQUEST'
+export const SET_SEARCH_REQUEST = 'SET_SEARCH_REQUEST'
 
-export function searchRequest(text) {
+export default function searchRequest(text) {
     return {
-        type: SEARCH_REQUEST,
+        type: SET_SEARCH_REQUEST,
         text
     }
 }
