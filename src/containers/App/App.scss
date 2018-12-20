@@ -2,6 +2,10 @@
     display: grid;
     grid-auto-rows: auto 1fr auto;
     min-height: 100vh;
+    color: #ffffff;
+    font-family: sans-serif;
+    font-weight: bold;
+    line-height: 1.3em;
 }
 
 .header {
@@ -10,4 +14,5 @@
 
 .main {
     margin-top: 90px;
+    background-color: rgb(29, 18, 48);
 }

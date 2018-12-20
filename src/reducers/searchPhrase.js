@@ -9,6 +9,7 @@ export default function searchPhrase(state = initialState, action) {
             return {
                 searchPhrase: action.text
             }
+            
         default: 
             return state;
     }

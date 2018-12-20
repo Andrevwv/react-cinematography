@@ -1,0 +1,35 @@
+.page-container {
+    .search-results {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .search-results-pagination {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 140px 140px;
+        column-gap: 1rem;
+        margin: 4rem 0 2rem;
+        font-size: 0.8rem;
+        line-height: 0.8rem;
+    }
+
+    .search-results-main-pagination__button {
+        background-color: #EB4E7A;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        letter-spacing: .2rem;
+        padding: 1rem;
+        text-transform: uppercase;
+        transition: background-color .5s, color .5s;
+        // width: 140px;
+        svg {
+            width: 15px;
+            height: 15px;
+        }
+    }
+}

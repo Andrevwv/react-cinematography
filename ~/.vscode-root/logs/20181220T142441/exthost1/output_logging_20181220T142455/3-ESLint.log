@@ -1,0 +1,60 @@
+[Info  - 14:26:25] ESLint server stopped.
+[Info  - 14:26:25] ESLint server running in node v8.9.3
+[Info  - 14:26:25] ESLint server is running.
+[Info  - 14:26:26] ESLint library loaded from: /home/andrew/Рабочий стол/projects/react-cinematography/node_modules/eslint/lib/api.js
+[Warn  - 14:26:26] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/components/PreviewItem/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 14:27:18] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/containers/App/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 15:09:58] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/containers/Home/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 15:17:27] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/components/SearchPage/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:23:33] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/components/Search/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:34:04] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/actions/searchDataReceived.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:35:48] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/actions/searchRequest.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:37:46] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/reducers/searchInput.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:42:41] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/actions/addSearchResponse.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:44:49] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/reducers/searchData.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:48:23] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/reducers/searchResponse.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:50:15] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/reducers/searchPhrase.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:50:59] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/reducers/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 16:59:15] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/components/Header/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
