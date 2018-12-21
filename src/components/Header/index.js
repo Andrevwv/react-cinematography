@@ -20,11 +20,8 @@ class Header extends Component {
     console.log(this.props.input);
 
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.props.input}`)
-                  .then(response => response.json())
-                  .then(data => {
-                      this.props.addSearchResponse(data)
-                      console.log(data);
-                  })
+        .then(response => response.json())
+        .then(data => this.props.addSearchResponse(data))
   }
 
 

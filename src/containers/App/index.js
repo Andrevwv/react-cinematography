@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 import Home from '../Home'
 import About from '../About'
 import Header from '../../components/Header'
@@ -43,7 +43,9 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(
+export default withRouter(
+  connect(
   undefined,
   mapDispatchToProps
   )(App)
+)
