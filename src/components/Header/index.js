@@ -5,13 +5,10 @@ import Search from '../Search'
 import homeIcon from './home.svg'
 import userIcon from './user.svg'
 import logo from './logo.svg'
-import searchRequest from '../../actions/searchRequest'
 import changeSearchInput from '../../actions/changeSearchInput'
 import addSearchResponse from '../../actions/addSearchResponse'
-import store from '../../store'
 import { connect } from 'react-redux'
-
-const API_KEY = 'd6d9ccdb088b2c87b107c39e58a2152a';
+import { API_KEY } from '../../APIconfig'
 
 class Header extends Component {
 
@@ -20,11 +17,13 @@ class Header extends Component {
   }
 
   onFormSubmit = () => {
+    console.log(this.props.input);
+
       fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.props.input}`)
                   .then(response => response.json())
                   .then(data => {
                       this.props.addSearchResponse(data)
-
+                      console.log(data);
                   })
   }
 
@@ -55,14 +54,12 @@ class Header extends Component {
 
 const mapStateToProps = store => {
   return {
-    phrase: store.phrase.searchPhrase,
     input: store.input.searchInput,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    searchRequest: phrase => dispatch(searchRequest(phrase)),
     changeSearchInput: input => dispatch(changeSearchInput(input)),
     addSearchResponse: data => dispatch(addSearchResponse(data))
   }

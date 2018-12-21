@@ -3,9 +3,6 @@ import './Search.scss'
 import searchIcon from './search.svg'
 import { Link } from 'react-router-dom'
 
-const API_KEY = 'd6d9ccdb088b2c87b107c39e58a2152a';
-
-
 class Search extends React.Component {
     render() {
         const currentPath = `/search-results/${this.props.input}`
