@@ -7,7 +7,11 @@ class PreviewItem extends Component {
         const imageSrc = this.props.object.poster_path !== null 
             ? `${this.props.settings.images.base_url}${this.props.settings.images.poster_sizes[1]}${this.props.object.poster_path}` 
             : noPoster;
-        console.log(this.props.object.poster_path);
+
+        const genres = this.props.genres.genres.filter((item) => {
+            return this.props.object.genre_ids.some((arrval) => item.id === arrval)
+        } )
+        console.log(genres);
         return (
             <div className="previev-item">
                 <img className="image" 
@@ -16,7 +20,7 @@ class PreviewItem extends Component {
                     >
                 </img>
                 <h3 className="name">{ this.props.object.original_title }</h3>
-                <p className="genre">{ this.props.object.original_language }</p>
+                <p className="genre">{ `${genres[0].name} / ${genres[1] ? genres[1].name : null}` }</p>
             </div>
         )
     }

@@ -1,0 +1,12 @@
+[Info  - 21:27:08] ESLint server stopped.
+[Info  - 21:27:08] ESLint server running in node v8.9.3
+[Info  - 21:27:08] ESLint server is running.
+[Info  - 21:27:09] ESLint library loaded from: /home/andrew/Рабочий стол/projects/react-cinematography/node_modules/eslint/lib/api.js
+[Warn  - 21:27:09] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/components/PreviewItem/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.
+[Warn  - 21:54:23] 
+No ESLint configuration (e.g .eslintrc) found for file: /home/andrew/Рабочий стол/projects/react-cinematography/src/components/SearchPage/index.js
+File will not be validated. Consider running 'eslint --init' in the workspace folder react-cinematography
+Alternatively you can disable ESLint by executing the 'Disable ESLint' command.

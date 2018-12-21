@@ -9,7 +9,7 @@ const SearchPage = (props) => {
     let testRender;
     
     if(props.searchResponse) {
-        testRender = props.searchResponse.map(item => <PreviewItem key={item.id} object={item} settings={props.settings}/>) 
+        testRender = props.searchResponse.map(item => <PreviewItem genres={props.genres} key={item.id} object={item} settings={props.settings}/>) 
     }
     console.log(store.getState())
     return (
@@ -34,7 +34,8 @@ const SearchPage = (props) => {
 const mapStateToProps = store => {
     return {
         searchResponse: store.searchResponse.results,
-        settings: store.settings
+        settings: store.settings,
+        genres: store.genres
     }
 }
 
