@@ -4,6 +4,7 @@ import Home from '../Home'
 import About from '../About'
 import Header from '../../components/Header'
 import SearchPage from '../../components/SearchPage'
+import MoviePage from '../../components/MoviePage'
 import './App.scss'
 import { connect } from 'react-redux'
 import addTMDBconfig from '../../actions/addTMDBconfig'
@@ -30,6 +31,7 @@ class App extends Component {
           <Route exact path="/" component={Home} />
           <Route exact path="/about-us" component={About} />
           <Route path="/search-results" component={SearchPage} />
+          <Route path="/movie" component={MoviePage} />
         </main>
       </div>
     )
