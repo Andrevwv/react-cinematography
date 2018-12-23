@@ -3,13 +3,10 @@ import './SearchPage.scss';
 import PreviewItem from '../../components/PreviewItem';
 import { connect } from 'react-redux'
 import store from '../../store'
-import changeMoviePage from '../../actions/pages/changeMoviePage'
 import changeSearchInput from '../../actions/changeSearchInput'
 
 class SearchPage extends Component {
     goToPage = (event) => {
-        
-        this.props.moviePage(event.target.id);
         this.props.changeSearchInput('');
     }
 
@@ -63,7 +60,6 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        moviePage: id => dispatch(changeMoviePage(id)),
         changeSearchInput: input => dispatch(changeSearchInput(input))
     }
 }

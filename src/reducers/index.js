@@ -3,12 +3,12 @@ import searchInput from './searchInput';
 import searchResponse from './searchResponse';
 import requestTMDBsettings from './requestTMDBsettings'
 import genresList from './genresList'
-import moviePage from './pages/moviePage'
+import moviePageData from './pages/moviePageData'
 
 export default combineReducers({
   input: searchInput,
   searchResponse,
   settings: requestTMDBsettings,
   genres: genresList,
-  moviePage
+  moviePageData
 })

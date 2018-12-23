@@ -17,15 +17,14 @@ class PreviewItem extends Component {
         } )
 
         return (
-            <Link className="preview-item" to={`/movie/${id}`} onClick={this.props.goToPage} id={id}>
+            <Link className="preview-item" to={`/movie/${id}`} onClick={this.props.goToPage}>
                 <img className="image" 
                     src={imageSrc} 
                     alt={`Poster for ${title}`}
-                    id={id}
                     >
                 </img>
-                <h3 className="name" id={id}>{ original_title }</h3>
-                <p className="genre" id={id}>{ `${genres[0].name} / ${genres[1] ? genres[1].name : null}` }</p>
+                <h3 className="name">{ original_title }</h3>
+                <p className="genre">{ `${genres[0] ? genres[0].name : null} / ${genres[1] ? genres[1].name : null}` }</p>
             </Link>
 
         )
