@@ -6,6 +6,7 @@ import { API_KEY } from '../../APIconfig';
 import { connect } from 'react-redux';
 import addMoviePageData from '../../actions/pages/addMoviePageData';
 import noBackdrop from './no-backdrop.jpg'
+import Slider from '../Slider'
 import noPoster from './no-poster.jpg'
 import { ifError } from 'assert';
 
@@ -31,17 +32,20 @@ class MoviePage extends Component {
     }
     render() {
         const { base_url, backdrop_sizes, poster_sizes } = this.props.settings.images;
-        const { poster_path, title, vote_average, genres, relese_date, overview } = this.props.pageData;
+        const { poster_path, title, vote_average, genres, relese_date, overview, credits, backdrop_path } = this.props.pageData;
 
-        const backdropImage = !!backdrop_sizes && !!this.props.pageData.backdrop_path
-            ? `${base_url}${backdrop_sizes[3]}${this.props.pageData.backdrop_path}`
+        const backdropImage = !!backdrop_sizes && !!backdrop_path
+            ? base_url + backdrop_sizes[3] + backdrop_path
             : noBackdrop
 
         const imageSrc = !!poster_path && !!poster_sizes 
-            ? `${base_url}${poster_sizes[1]}${poster_path}` 
+            ? base_url + poster_sizes[1] + poster_path 
             : noPoster;
 
         const genresItem = !!genres ? genres.map((item) => <li key={item.id} className="genres__item">{item.name}</li>) : null
+        const cast = !!credits && !!base_url
+            ? <Slider imagesSettings={this.props.settings.images} dataObject={credits} />
+            : null
 
         return (
             <div className="movie-page">
@@ -56,7 +60,17 @@ class MoviePage extends Component {
                         <div className="relese-date">{relese_date}</div>
                     </div>
                 </div>
-                <div className="overview container">{overview}</div>
+                <div className="summary-container container">
+                    <div className="summary__title">
+                        Summary
+                    </div>
+                    <div className="summary__text">
+                        {overview}
+                    </div>
+                    <div>
+                        {cast}
+                    </div>
+                </div>
 
             </div>
         )

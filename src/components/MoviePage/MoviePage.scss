@@ -1,6 +1,4 @@
 .movie-page{
-  display: flex;
-  flex-direction: column;
 
   .backdrop {
     width: 100%;
@@ -53,5 +51,22 @@
         bottom: 1px;
       }
     }
+  }
+  
+  .summary-container {
+    margin-top: 30px;
+  }
+
+  .summary__title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: normal;
+    letter-spacing: 0.2rem;
+    margin-bottom: 15px;
+  }
+
+  .summary__text {
+    font-weight: normal;
+    opacity: 0.5;
   }
 }
