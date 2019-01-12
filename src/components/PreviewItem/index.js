@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom'
 class PreviewItem extends Component {
 
     render() {
-        const { base_url, poster_sizes} = this.props.settings.images;
+        const { base_url, poster_sizes } = this.props.settings.images;
         const { poster_path, genre_ids, id, title, original_title } = this.props.object;
-        const imageSrc = poster_path !== null 
+        const imageSrc = !!poster_path && !!poster_sizes
             ? `${base_url}${poster_sizes[1]}${poster_path}` 
             : noPoster;
 
-        const genres = this.props.genres.genres.filter((item) => {
-            return genre_ids.some((arrval) => item.id === arrval)
-        } )
+        const genres = !!this.props.genres.genres
+            ? this.props.genres.genres.filter((item) => {
+                    return genre_ids.some((arrival) => item.id === arrival)
+                } )
+            : null
 
         return (
             <Link className="preview-item" to={`/movie/${id}`} onClick={this.props.goToPage}>
@@ -24,7 +26,11 @@ class PreviewItem extends Component {
                     >
                 </img>
                 <h3 className="name">{ original_title }</h3>
-                <p className="genre">{ `${genres[0] ? genres[0].name : null} / ${genres[1] ? genres[1].name : null}` }</p>
+                <p className="genre">{ 
+                    !!genres
+                    ? `${genres[0] ? genres[0].name : null} / ${genres[1] ? genres[1].name : null}`
+                    : null
+                }</p>
             </Link>
 
         )

@@ -7,6 +7,8 @@ import { connect } from 'react-redux';
 import addMoviePageData from '../../actions/pages/addMoviePageData';
 import noBackdrop from './no-backdrop.jpg'
 import Slider from '../Slider'
+import VideoSlider from '../VideoSlider'
+import PreviewItem from '../PreviewItem'
 import noPoster from './no-poster.jpg'
 import { ifError } from 'assert';
 
@@ -16,9 +18,13 @@ class MoviePage extends Component {
         super();
     }
 
+    goToPage = (event) => {
+        this.props.changeSearchInput('');
+    }
+
     componentDidMount() {
         const pageID = this.props.location.pathname.split('/')[2];
-        const appendToResponse = ['credits', 'videos'];
+        const appendToResponse = ['credits', 'videos', 'similar'];
 
         const URL = `https://api.themoviedb.org/3/movie/${pageID}?api_key=${API_KEY}&language=en-US&append_to_response=${appendToResponse}`;
         fetch(URL)
@@ -32,7 +38,7 @@ class MoviePage extends Component {
     }
     render() {
         const { base_url, backdrop_sizes, poster_sizes } = this.props.settings.images;
-        const { poster_path, title, vote_average, genres, relese_date, overview, credits, backdrop_path } = this.props.pageData;
+        const { poster_path, title, vote_average, genres, relese_date, overview, credits, backdrop_path, videos, similar } = this.props.pageData;
 
         const backdropImage = !!backdrop_sizes && !!backdrop_path
             ? base_url + backdrop_sizes[3] + backdrop_path
@@ -43,8 +49,27 @@ class MoviePage extends Component {
             : noPoster;
 
         const genresItem = !!genres ? genres.map((item) => <li key={item.id} className="genres__item">{item.name}</li>) : null
+        
         const cast = !!credits && !!base_url
             ? <Slider imagesSettings={this.props.settings.images} dataObject={credits} />
+            : null
+
+        const trailers = !!videos
+            ? <VideoSlider videos={videos} />
+            : null
+
+        const similarMovies = !!similar && !!genres && !!this.props.settings
+            ? similar.results.map( item => {
+                return (
+                    <PreviewItem 
+                        genres={genres} 
+                        key={item.id} 
+                        object={item} 
+                        settings={this.props.settings}
+                        goToPage={this.goToPage}  
+                    />
+                )
+            }) 
             : null
 
         return (
@@ -69,6 +94,12 @@ class MoviePage extends Component {
                     </div>
                     <div>
                         {cast}
+                    </div>
+                    <div>
+                        {trailers}
+                    </div>
+                    <div>
+                        {similarMovies}
                     </div>
                 </div>
 
