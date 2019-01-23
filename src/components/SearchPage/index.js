@@ -17,13 +17,19 @@ class SearchPage extends Component {
 	
 		if(this.props.searchResponse) {
 			testRender = this.props.searchResponse.map( item => {
+				const { base_url, poster_sizes } = this.props.settings.images;
+				const { poster_path, genre_ids, id, title } = item;
+				const imageSrc = `${base_url}${poster_sizes[1]}${poster_path}`;
+				const genres = this.props.genres.genres.filter((item) => {
+						return genre_ids.some((arrival) => item.id === arrival)
+					} )
 				return (
 					<PreviewItem 
-						genres={this.props.genres} 
-						key={item.id} 
-						object={item} 
-						settings={this.props.settings}
-						goToPage={this.goToPage}  
+						imageSrc={imageSrc}
+						id={id}
+						title={title}
+						genres={genres}
+						goToPage={this.goToPage}
 					/>
 				)
 			}) 

@@ -99,7 +99,7 @@ class MoviePage extends Component {
 						{trailers}
 					</div>
 					<div>
-						{similarMovies}
+						{<Slider moviesArray={similarMovies} /> }
 					</div>
 				</div>
 
