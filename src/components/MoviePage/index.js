@@ -10,14 +10,10 @@ import Slider from '../Slider'
 import VideoSlider from '../VideoSlider'
 import PreviewItem from '../PreviewItem'
 import noPoster from './no-poster.jpg'
-import { ifError } from 'assert';
+import noPhoto from './no-photo.png';
 
 
 class MoviePage extends Component {
-	constructor() {
-		super();
-	}
-
 	goToPage = (event) => {
 		this.props.changeSearchInput('');
 	}
@@ -32,12 +28,12 @@ class MoviePage extends Component {
 			.then( data => {
 				console.log(data);
 				this.props.addMoviePageData(data)
-			} )     
+			} )
 			
 		
 	}
 	render() {
-		const { base_url, backdrop_sizes, poster_sizes } = this.props.settings.images;
+		const { base_url, backdrop_sizes, poster_sizes, profile_sizes } = this.props.settings.images;
 		const { poster_path, title, vote_average, genres, relese_date, overview, credits, backdrop_path, videos, similar } = this.props.pageData;
 
 		const backdropImage = !!backdrop_sizes && !!backdrop_path
@@ -49,24 +45,40 @@ class MoviePage extends Component {
 			: noPoster;
 
 		const genresItem = !!genres ? genres.map((item) => <li key={item.id} className="genres__item">{item.name}</li>) : null
-		
-		const cast = !!credits && !!base_url
-			? <Slider imagesSettings={this.props.settings.images} dataObject={credits} />
-			: null
 
-		const trailers = !!videos
-			? <VideoSlider videos={videos} />
+		const cast = !!credits && !!this.props.settings
+			? credits.cast.map((item) => {
+				const src = !!item.profile_path && !!profile_sizes
+					? base_url + profile_sizes[1] + item.profile_path
+					: noPhoto
+			
+				return <PreviewItem 
+							key={item.id} 
+							id={item.id}
+							title={item.name}
+							imageSrc={src}
+							goToPage={this.goToPage}
+							thisIsActor={true}
+						/>
+				}
+			)
 			: null
 
 		const similarMovies = !!similar && !!genres && !!this.props.settings
 			? similar.results.map( item => {
+				const src = !!poster_path && !!poster_sizes 
+					? base_url + poster_sizes[1] + item.poster_path 
+					: noPoster;
+
 				return (
 					<PreviewItem 
 						genres={genres} 
 						key={item.id} 
-						object={item} 
-						settings={this.props.settings}
-						goToPage={this.goToPage}  
+						id={item.id}
+						title={item.title}
+						imageSrc={src}
+						goToPage={this.goToPage}
+						thisIsMovie={true}
 					/>
 				)
 			}) 
@@ -76,7 +88,8 @@ class MoviePage extends Component {
 			<div className="movie-page">
 				<div className="backdrop" style={{backgroundImage: `url(${backdropImage})`}}></div>
 				<div className="info-container container">
-					<img className="poster" src={imageSrc} />
+					<img className="poster" src={imageSrc} alt={`${title}`}
+					/>
 					<div className="info-content">
 						<h1 className="title">{title}</h1>
 						<ul className="genres">{genresItem}</ul>
@@ -93,13 +106,13 @@ class MoviePage extends Component {
 						{overview}
 					</div>
 					<div>
-						{cast}
+						{ cast ? <Slider previewItems={cast} /> : null }
 					</div>
 					<div>
-						{trailers}
+						{ videos ? <VideoSlider results={videos.results} /> : null }
 					</div>
 					<div>
-						{<Slider moviesArray={similarMovies} /> }
+						{ similarMovies ? <Slider previewItems={similarMovies} /> : null }
 					</div>
 				</div>
 

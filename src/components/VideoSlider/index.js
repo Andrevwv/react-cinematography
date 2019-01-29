@@ -1,25 +1,39 @@
 import React from 'react';
 import './VideoSlider.scss';
+import SlickSlider from "react-slick";
 
 function VideoSlider(props) {
-  const {results} = props.videos;
-  let src = '';
+  var settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 3,
+		slidesToScroll: 3
+	};
 
-  const sliderItems = results.map((item) => {
-    src = `https://www.youtube.com/embed/${item.key}`
+  const sliderItems = props.results.map((item) => {
+    const src = `https://www.youtube.com/embed/${item.key}`
 
       return (
-        <iframe key={item.id} width="420" height="315"
-          src={src}>
-        </iframe>
+        <div key={item.id} className="video-slider">
+            <iframe 
+              
+              title={item.id} 
+              width="420" 
+              height="315"
+              src={src}
+              className="video-slider">
+            </iframe>
+        </div>
       )
     }
   )
 
   return (
-    <div className="video-slider">
-      { sliderItems }      
-    </div>
+		<SlickSlider {...settings}>
+      { sliderItems }
+		</SlickSlider>
+
   )
 }
 
