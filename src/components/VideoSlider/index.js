@@ -7,17 +7,15 @@ function VideoSlider(props) {
 		dots: true,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 3,
-		slidesToScroll: 3
+		slidesToShow: props.results.length > 2 ? 3 : props.results.length,
+		slidesToScroll: props.results.length > 2 ? 3 : props.results.length
 	};
-
   const sliderItems = props.results.map((item) => {
     const src = `https://www.youtube.com/embed/${item.key}`
 
       return (
         <div key={item.id} className="video-slider">
             <iframe 
-              
               title={item.id} 
               width="420" 
               height="315"

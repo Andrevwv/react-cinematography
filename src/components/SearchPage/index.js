@@ -30,6 +30,7 @@ class SearchPage extends Component {
 						title={title}
 						genres={genres}
 						goToPage={this.goToPage}
+						thisIsMovie={true}
 					/>
 				)
 			}) 
