@@ -3,12 +3,12 @@ import './Slider.scss';
 import SlickSlider from "react-slick";
 
 function Slider(props) {
-	var settings = {
+	let settings = {
 		dots: true,
 		infinite: true,
 		speed: 500,
-		slidesToShow: 5,
-		slidesToScroll: 5
+		slidesToShow: props.previewItems.length > 4 ? 5 : props.previewItems.length,
+		slidesToScroll: props.previewItems.length > 4 ? 5 : props.previewItems.length
 	};
 
 	return (

@@ -27,10 +27,10 @@ class PreviewItem extends Component {
 		}
 
 		if(this.props.thisIsActor) {
-			const { goToPage, imageSrc, title, id } = this.props
+			const { imageSrc, title, id } = this.props
 
 			return (
-				<Link className="preview-item" to={`/actor/${id}`} onClick={goToPage}>
+				<Link className="preview-item" to={`/actor/${id}`} >
 					<img className="image" 
 						src={imageSrc} 
 						alt={`${title}`}
