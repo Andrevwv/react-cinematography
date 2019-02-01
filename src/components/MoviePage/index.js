@@ -70,8 +70,7 @@ class MoviePage extends Component {
 					? base_url + poster_sizes[1] + item.poster_path 
 					: noPoster;
 
-				return (
-					<PreviewItem 
+				return <PreviewItem 
 						genres={genres} 
 						key={item.id} 
 						id={item.id}
@@ -80,7 +79,7 @@ class MoviePage extends Component {
 						goToPage={this.goToPage}
 						thisIsMovie={true}
 					/>
-				)
+
 			}) 
 			: null
 
@@ -106,12 +105,15 @@ class MoviePage extends Component {
 						{overview}
 					</div>
 					<div>
+						<h3>Cast</h3>
 						{ cast ? <Slider previewItems={cast} /> : null }
 					</div>
 					<div>
+						<h3>Trailers</h3>
 						{ videos ? <VideoSlider results={videos.results} /> : null }
 					</div>
 					<div>
+						<h3>Similar movies</h3>
 						{ similarMovies ? <Slider previewItems={similarMovies} /> : null }
 					</div>
 				</div>
@@ -122,10 +124,10 @@ class MoviePage extends Component {
 }
 
 const mapStateToProps = (store) => {
-return {
-	settings: store.settings,
-	pageData: store.moviePageData
-}
+	return {
+		settings: store.settings,
+		pageData: store.moviePageData
+	}
 }
 
 const mapDispatchToProps = dispatch => {

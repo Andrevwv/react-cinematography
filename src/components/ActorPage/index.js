@@ -28,9 +28,8 @@ class ActorPage extends Component {
 				console.log(data);
 				this.props.addActorPageData(data)
 			} )
-			
-		
 	}
+
 	render() {
 		const { base_url, profile_sizes, poster_sizes } = this.props.settings.images;
 		const { profile_path, name, biography, gender, birthday, place_of_birth, homepage, also_known_as, known_for_department, movie_credits } = this.props.pageData;
@@ -92,9 +91,6 @@ class ActorPage extends Component {
 				})
 			)
 			: null
-		console.log(popularMovies)
-		console.log(unpopularMovies)
-
 
 		return (
 			<div className="actor-page">
