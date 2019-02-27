@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { API_KEY } from '../../APIconfig';
+import './Home.scss';
 import Loader from '../../components/Loader'
 import PreviewItem from '../../components/PreviewItem'
 import { withRouter } from 'react-router-dom';
@@ -39,15 +40,15 @@ class Home extends Component {
 		console.log(this.props.pageData)
 		console.log(this.props.settings)
 
-		if(this.props.pageData.upcomingMovies.page && this.props.settings.images.poster_sizes){
+		if(this.props.pageData.upcomingMovies && this.props.settings.images.poster_sizes){
 			const { upcomingMovies, popularMovies, movieTopRated, nowPlayingMovies, popularPeople } = this.props.pageData;
 			const { base_url, backdrop_sizes, poster_sizes, profile_sizes } = this.props.settings.images;
 			function returnPreviewItem(object) {
-				object.results.map(item => {
+				return object.results.map(item => {
 					let src = ''
 					if (item.title) {
 						src = item.poster_path
-							? base_url + poster_sizes[1] + item.poster_path 
+							? base_url + poster_sizes[1] + item.poster_path
 							: noPoster;
 						return <PreviewItem 
 							key={item.id} 
@@ -68,18 +69,37 @@ class Home extends Component {
 							imageSrc={src}
 							thisIsActor={true}
 						/>
-					} else return '111';
+					} else return null;
 				})
 			}
 			console.log(1111111)
-			console.log(returnPreviewItem(upcomingMovies))
+			console.log(upcomingMovies)
 
 			return (
-			<div>
-				<h1>Home</h1>
-				<Loader />
-				<Slider previewItems={ returnPreviewItem(upcomingMovies) }/>
-			</div>
+				<div className="container">
+					<Loader />
+					<div className="slider">
+						<h3 className="slider__category">Upcoming</h3>
+						<Slider previewItems={ returnPreviewItem(upcomingMovies) }/>
+					</div>
+					<div className="slider">
+						<h3 className="slider__category">Popular</h3>
+						<Slider previewItems={ returnPreviewItem(popularMovies) }/>
+					</div>
+					<div className="slider">
+						<h3 className="slider__category">Now Playing</h3>
+						<Slider previewItems={ returnPreviewItem(nowPlayingMovies) }/>
+					</div>
+					<div className="slider">
+						<h3 className="slider__category">Top Rated</h3>
+						<Slider previewItems={ returnPreviewItem(movieTopRated) }/>
+					</div>
+					<div className="slider">
+						<h3 className="slider__category">Popular Actors</h3>
+						<Slider previewItems={ returnPreviewItem(popularPeople) }/>
+					</div>
+					
+				</div>
 			)
 		} else return null
 	}
