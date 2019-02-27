@@ -8,8 +8,8 @@ import addActorPageData from '../../actions/pages/addActorPageData';
 import Slider from '../Slider'
 import VideoSlider from '../VideoSlider'
 import PreviewItem from '../PreviewItem'
-import noPoster from './no-poster.jpg'
-import noPhoto from './no-photo.png';
+import noPoster from '../../images/no-poster.jpg'
+import noPhoto from '../../images/no-photo.png';
 
 
 class ActorPage extends Component {
@@ -33,6 +33,7 @@ class ActorPage extends Component {
 	render() {
 		const { base_url, profile_sizes, poster_sizes } = this.props.settings.images;
 		const { profile_path, name, biography, gender, birthday, place_of_birth, homepage, also_known_as, known_for_department, movie_credits } = this.props.pageData;
+		const { genres } =  this.props.genres;
 		const actorGender = gender == 1 ? "Female" : "Male";
 		const imageSrc = !!profile_path && !!profile_sizes 
 			? base_url + profile_sizes[2] + profile_path 
@@ -48,19 +49,23 @@ class ActorPage extends Component {
 				})
 				.slice(0, 40)
 				.map(item => {
+					const movieGenres = genres.filter((genreItem) => {
+						return item.genre_ids.some((arrival) => genreItem.id === arrival)
+					} )
 					const src = !!poster_sizes && item.poster_path
 					? base_url + poster_sizes[1] + item.poster_path 
 					: noPoster;
 
 					return (
 						<PreviewItem 
-							genres={item.genres} 
+							genres={movieGenres} 
 							key={item.id} 
 							id={item.id}
 							title={item.title}
 							imageSrc={src}
 							goToPage={this.goToPage}
-							thisIsMovie={true}
+							voteAverage={item.vote_average}
+							previewType="movie"
 						/>
 					)
 				})
@@ -85,7 +90,8 @@ class ActorPage extends Component {
 							title={item.title}
 							imageSrc={src}
 							goToPage={this.goToPage}
-							thisIsMovie={true}
+							voteAverage={item.vote_average}
+							previewType="movie"
 						/>
 					)
 				})
@@ -154,7 +160,8 @@ class ActorPage extends Component {
 const mapStateToProps = (store) => {
 return {
 	settings: store.settings,
-	pageData: store.actorPageData
+	pageData: store.actorPageData,
+	genres: store.genres
 }
 }
 

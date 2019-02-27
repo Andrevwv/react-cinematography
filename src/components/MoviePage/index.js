@@ -5,12 +5,12 @@ import { withRouter } from 'react-router-dom';
 import { API_KEY } from '../../APIconfig';
 import { connect } from 'react-redux';
 import addMoviePageData from '../../actions/pages/addMoviePageData';
-import noBackdrop from './no-backdrop.jpg'
+import noBackdrop from '../../images/no-backdrop.jpg'
 import Slider from '../Slider'
 import VideoSlider from '../VideoSlider'
 import PreviewItem from '../PreviewItem'
-import noPoster from './no-poster.jpg'
-import noPhoto from './no-photo.png';
+import noPoster from '../../images/no-poster.jpg'
+import noPhoto from '../../images/no-photo.png';
 
 
 class MoviePage extends Component {
@@ -58,7 +58,7 @@ class MoviePage extends Component {
 							title={item.name}
 							imageSrc={src}
 							goToPage={this.goToPage}
-							thisIsActor={true}
+							previewType="actor"
 						/>
 				}
 			)
@@ -77,7 +77,8 @@ class MoviePage extends Component {
 						title={item.title}
 						imageSrc={src}
 						goToPage={this.goToPage}
-						thisIsMovie={true}
+						voteAverage={item.vote_average}
+						previewType="movie"
 					/>
 
 			}) 

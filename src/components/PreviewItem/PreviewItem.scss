@@ -1,5 +1,6 @@
 .preview-item {
     max-width: 100px;
+    position: relative;
 
     .image {
         width: 100%;
@@ -17,5 +18,19 @@
         margin: 0.5em 0 0 0;
         font-size: 0.9rem;
     }
+
+    .vote-average {
+        position: absolute;
+        left: 20%;
+        top: 20px;
+    }
     
+}
+
+.backdrop-item {
+    display: block;
+    width: 100%;
+    height: calc(100vh - 90px);
+    background-position: center 0;
+    background-size: cover;
 }

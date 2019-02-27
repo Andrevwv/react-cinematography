@@ -6,17 +6,19 @@ import PreviewItem from '../../components/PreviewItem'
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import addHomePageData from '../../actions/pages/addHomePageData';
-import noPoster from './no-poster.jpg'
-import noPhoto from './no-photo.png';
+import noPoster from '../../images/no-poster.jpg'
+import noPhoto from '../../images/no-photo.png';
+import noBackdrop from '../../images/no-backdrop.jpg';
 import Slider from '../../components/Slider'
+import SlickSlider from "react-slick";
 
 class Home extends Component {
 	componentDidMount() {
 		const URLarray = [
+			`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US&region=us`,
 			`https://api.themoviedb.org/3/movie/upcoming?api_key=${API_KEY}&language=en-US`,
 			`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US`,
 			`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=en-US`,
-			`https://api.themoviedb.org/3/movie/now_playing?api_key=${API_KEY}&language=en-US`,
 			`https://api.themoviedb.org/3/person/popular?api_key=${API_KEY}&language=en-US`
 		];
 
@@ -26,79 +28,124 @@ class Home extends Component {
 		))
 		.then(data => {
 			const responses = {
-				upcomingMovies: data[0],
-				popularMovies: data[1],
-				movieTopRated: data[2],
-				nowPlayingMovies: data[3],
+				nowPlayingMovies: data[0],
+				upcomingMovies: data[1],
+				popularMovies: data[2],
+				movieTopRated: data[3],
 				popularPeople: data[4]
 			}
 			this.props.addHomePageData(responses)
-			console.log(responses)
 		})
 	}
 	render() {
+
+		let topSliderSettings = {
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			swipe: false
+		};
 		console.log(this.props.pageData)
 		console.log(this.props.settings)
 
-		if(this.props.pageData.upcomingMovies && this.props.settings.images.poster_sizes){
-			const { upcomingMovies, popularMovies, movieTopRated, nowPlayingMovies, popularPeople } = this.props.pageData;
+		if(this.props.pageData.nowPlayingMovies && this.props.settings.images.poster_sizes && this.props.genres.genres ){
+			const { nowPlayingMovies, upcomingMovies, popularMovies, movieTopRated, popularPeople } = this.props.pageData;
 			const { base_url, backdrop_sizes, poster_sizes, profile_sizes } = this.props.settings.images;
-			function returnPreviewItem(object) {
-				return object.results.map(item => {
-					let src = ''
+			const { genres } = this.props.genres
+
+			function returnMovieGenresArray(movie) {
+				const movieGenres = genres.filter((genreItem) => {
+					return movie.genre_ids.some((arrival) => genreItem.id === arrival)
+				} )
+				return movieGenres;
+			}
+
+			function genereteMoviePreviewItem(movie) {
+				let src = movie.poster_path
+					? base_url + poster_sizes[1] + movie.poster_path
+					: noPoster;
+				return <PreviewItem 
+					genres={returnMovieGenresArray(movie)} 
+					key={movie.id} 
+					id={movie.id}
+					title={movie.title}
+					imageSrc={src}
+					previewType="movie"
+					voteAverage={movie.vote_average}
+				/>
+			}
+			function genereteActorPreviewItem(actor) {
+				let src = actor.profile_path 
+					? base_url + profile_sizes[1] + actor.profile_path
+					: noPhoto
+				return <PreviewItem 
+					key={actor.id} 
+					id={actor.id}
+					title={actor.name}
+					imageSrc={src}
+					previewType="actor"
+				/>
+			}
+
+			function genereteMovieBackdropPreviewItem(movie) {
+				let src = movie.poster_path
+					? base_url + backdrop_sizes[3] + movie.backdrop_path
+					: noBackdrop;
+				return <PreviewItem 
+					genres={returnMovieGenresArray(movie)} 
+					key={movie.id} 
+					id={movie.id}
+					title={movie.title}
+					imageSrc={src}
+					previewType="movie"
+					voteAverage={movie.vote_average}
+					backdrop={true}
+				/>
+			}
+			function returnPreviewItemsArray(ratingArray) {
+				return ratingArray.results.map(item => {
 					if (item.title) {
-						src = item.poster_path
-							? base_url + poster_sizes[1] + item.poster_path
-							: noPoster;
-						return <PreviewItem 
-							key={item.id} 
-							id={item.id}
-							title={item.title}
-							imageSrc={src}
-							thisIsMovie={true}
-						/>
+						return genereteMoviePreviewItem(item);
 					}
 					else if (item.name) {
-						src = item.profile_path 
-							? base_url + profile_sizes[1] + item.profile_path
-							: noPhoto
-						return <PreviewItem 
-							key={item.id} 
-							id={item.id}
-							title={item.name}
-							imageSrc={src}
-							thisIsActor={true}
-						/>
+						return genereteActorPreviewItem(item);
 					} else return null;
 				})
 			}
-			console.log(1111111)
-			console.log(upcomingMovies)
 
 			return (
-				<div className="container">
-					<Loader />
-					<div className="slider">
-						<h3 className="slider__category">Upcoming</h3>
-						<Slider previewItems={ returnPreviewItem(upcomingMovies) }/>
-					</div>
-					<div className="slider">
-						<h3 className="slider__category">Popular</h3>
-						<Slider previewItems={ returnPreviewItem(popularMovies) }/>
-					</div>
-					<div className="slider">
-						<h3 className="slider__category">Now Playing</h3>
-						<Slider previewItems={ returnPreviewItem(nowPlayingMovies) }/>
-					</div>
-					<div className="slider">
-						<h3 className="slider__category">Top Rated</h3>
-						<Slider previewItems={ returnPreviewItem(movieTopRated) }/>
-					</div>
-					<div className="slider">
-						<h3 className="slider__category">Popular Actors</h3>
-						<Slider previewItems={ returnPreviewItem(popularPeople) }/>
-					</div>
+				<div className="home-page">
+					<SlickSlider {...topSliderSettings}>
+					{ nowPlayingMovies.results.map(item => genereteMovieBackdropPreviewItem(item)) }
+					</SlickSlider>
 					
+					<div className="container">
+						<Loader />
+						
+						<div className="slider">
+							<h3 className="slider__category">Now Playing</h3>
+							<Slider previewItems={ returnPreviewItemsArray(nowPlayingMovies) }/>
+						</div>
+						<div className="slider">
+							<h3 className="slider__category">Upcoming</h3>
+							<Slider previewItems={ returnPreviewItemsArray(upcomingMovies) }/>
+						</div>
+						<div className="slider">
+							<h3 className="slider__category">Popular</h3>
+							<Slider previewItems={ returnPreviewItemsArray(popularMovies) }/>
+						</div>
+						<div className="slider">
+							<h3 className="slider__category">Top Rated</h3>
+							<Slider previewItems={ returnPreviewItemsArray(movieTopRated) }/>
+						</div>
+						<div className="slider">
+							<h3 className="slider__category">Popular Actors</h3>
+							<Slider previewItems={ returnPreviewItemsArray(popularPeople) }/>
+						</div>
+						
+					</div>
 				</div>
 			)
 		} else return null
@@ -108,7 +155,8 @@ class Home extends Component {
 const mapStateToProps = (store) => {
 	return {
 		settings: store.settings,
-		pageData: store.homePageData
+		pageData: store.homePageData,
+		genres: store.genres
 	}
 }
 
