@@ -1,5 +1,4 @@
 {
-  "private": true,
   "homepage": "https://andrevwv.github.io/react-cinematography",
   "scripts": {
     "start": "react-scripts start",
