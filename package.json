@@ -1,6 +1,6 @@
 {
   "private": true,
-  "homepage": "http://Andrevwv.github.io/react-cinematography",
+  "homepage": "https://andrevwv.github.io/react-cinematography",
   "scripts": {
     "start": "react-scripts start",
     "dev": "react-scripts start",
