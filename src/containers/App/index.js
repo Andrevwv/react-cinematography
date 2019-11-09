@@ -14,7 +14,7 @@ import { API_KEY } from '../../APIconfig'
 
 
 class App extends Component {
-  componentDidMount() {
+  componentWillMount() {
     fetch(`https://api.themoviedb.org/3/configuration?api_key=${API_KEY}`)
       .then( response => response.json() )
       .then( data => this.props.settings(data) )

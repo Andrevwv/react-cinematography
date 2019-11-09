@@ -2,9 +2,8 @@
 import React, { Component } from 'react';
 import './MoviePage.scss';
 import { withRouter } from 'react-router-dom';
-import { API_KEY } from '../../APIconfig';
 import { connect } from 'react-redux';
-import addMoviePageData from '../../actions/pages/addMoviePageData';
+import getMoviePageData from '../../actions/pages/getMoviePageData';
 import noBackdrop from '../../images/no-backdrop.jpg'
 import Slider from '../Slider'
 import VideoSlider from '../VideoSlider'
@@ -20,17 +19,7 @@ class MoviePage extends Component {
 
 	componentDidMount() {
 		const pageID = this.props.location.pathname.split('/')[2];
-		const appendToResponse = ['credits', 'videos', 'similar'];
-
-		const URL = `https://api.themoviedb.org/3/movie/${pageID}?api_key=${API_KEY}&language=en-US&append_to_response=${appendToResponse}`;
-		fetch(URL)
-			.then( response => response.json() )
-			.then( data => {
-				console.log(data);
-				this.props.addMoviePageData(data)
-			} )
-			
-		
+		this.props.getMoviePageData(pageID)
 	}
 	render() {
 		const { base_url, backdrop_sizes, poster_sizes, profile_sizes } = this.props.settings.images;
@@ -133,7 +122,7 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = dispatch => {
 return {
-	addMoviePageData: input => dispatch(addMoviePageData(input))
+	getMoviePageData: input => dispatch(getMoviePageData(input))
 }
 }
 

@@ -2,11 +2,9 @@
 import React, { Component } from 'react';
 import './ActorPage.scss';
 import { withRouter } from 'react-router-dom';
-import { API_KEY } from '../../APIconfig';
 import { connect } from 'react-redux';
-import addActorPageData from '../../actions/pages/addActorPageData';
+import getActorPageData from '../../actions/pages/getActorPageData';
 import Slider from '../Slider'
-import VideoSlider from '../VideoSlider'
 import PreviewItem from '../PreviewItem'
 import noPoster from '../../images/no-poster.jpg'
 import noPhoto from '../../images/no-photo.png';
@@ -19,15 +17,7 @@ class ActorPage extends Component {
 
 	componentDidMount() {
 		const pageID = this.props.location.pathname.split('/')[2];
-		const appendToResponse = ['images', 'movie_credits'];
-
-		const URL = `https://api.themoviedb.org/3/person/${pageID}?api_key=${API_KEY}&language=en-US&append_to_response=${appendToResponse}`;
-		fetch(URL)
-			.then( response => response.json() )
-			.then( data => {
-				console.log(data);
-				this.props.addActorPageData(data)
-			} )
+		this.props.getActorPageData(pageID)
 	}
 
 	render() {
@@ -137,7 +127,7 @@ class ActorPage extends Component {
 							: null
 						}
 					</div>
-					<div className="movies">
+					<div className="movies slider">
 						{ 
 							popularMovies 
 							? (<div className="popularMovies"><h3>Popular movies:</h3><Slider previewItems={popularMovies}/></div>) 
@@ -167,7 +157,7 @@ return {
 
 const mapDispatchToProps = dispatch => {
 return {
-	addActorPageData: input => dispatch(addActorPageData(input))
+	getActorPageData: input => dispatch(getActorPageData(input))
 }
 }
 

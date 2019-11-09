@@ -47,8 +47,6 @@ class Home extends Component {
 			slidesToScroll: 1,
 			swipe: false
 		};
-		console.log(this.props.pageData)
-		console.log(this.props.settings)
 
 		if(this.props.pageData.nowPlayingMovies && this.props.settings.images.poster_sizes && this.props.genres.genres ){
 			const { nowPlayingMovies, upcomingMovies, popularMovies, movieTopRated, popularPeople } = this.props.pageData;

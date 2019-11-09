@@ -2,6 +2,9 @@
     .search-results {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+        grid-auto-rows: 30rem;
+        margin-top: 5rem;
     }
 
     .search-results-pagination {
@@ -10,8 +13,8 @@
         grid-template-columns: 140px 140px;
         column-gap: 1rem;
         margin: 4rem 0 2rem;
-        font-size: 0.8rem;
-        line-height: 0.8rem;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
     }
 
     .search-results-main-pagination__button {

@@ -1,24 +1,32 @@
 import React, { Component } from 'react';
 import './SearchPage.scss';
 import PreviewItem from '../../components/PreviewItem';
-import { connect } from 'react-redux'
-import store from '../../store'
-import changeSearchInput from '../../actions/changeSearchInput'
+import { connect } from 'react-redux';
+import store from '../../store';
+import searchRequest from '../../actions/searchRequest';
+import changeSearchInput from '../../actions/changeSearchInput';
 
 class SearchPage extends Component {
 	goToPage = (event) => {
 		this.props.changeSearchInput('');
 	}
 
+	componentDidMount() {
+		this.props.changeSearchInput(searchWord);
+
+		const searchWord = this.props.location.pathname.split('/')[2];
+		this.props.searchRequest(searchWord);
+	}
+
 	render() {
 		const prevArrow = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 128L192 256l128 128z"></path></svg>;
 		const nextArrow = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M192 128l128 128-128 128z"></path></svg>;
 		let testRender;
-	
-		if(this.props.searchResponse) {
+		if(this.props.searchResponse.length && this.props.settings.images.poster_sizes) {
 			testRender = this.props.searchResponse.map( item => {
 				const { base_url, poster_sizes } = this.props.settings.images;
 				const { poster_path, genre_ids, id, title } = item;
+
 				const imageSrc = `${base_url}${poster_sizes[1]}${poster_path}`;
 				const genres = this.props.genres.genres.filter((item) => {
 						return genre_ids.some((arrival) => item.id === arrival)
@@ -38,7 +46,7 @@ class SearchPage extends Component {
 		console.log(store.getState())
 		return (
 			<div className="page-container">
-				<section className="search-results">
+				<section className="search-results container">
 				 { testRender }
 				</section>
 				<div className="search-results-pagination">
@@ -67,7 +75,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		changeSearchInput: input => dispatch(changeSearchInput(input))
+		changeSearchInput: input => dispatch(changeSearchInput(input)),
+		searchRequest: input => dispatch(searchRequest(input))
 	}
 }
 

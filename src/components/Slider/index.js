@@ -12,7 +12,7 @@ function Slider(props) {
 	};
 
 	return (
-		<SlickSlider {...settings}>
+		<SlickSlider  {...settings}>
 		{ props.previewItems }
 		</SlickSlider>
 	)

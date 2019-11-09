@@ -16,15 +16,6 @@ class Header extends Component {
       this.props.changeSearchInput(event.target.value);
   }
 
-  onFormSubmit = () => {
-    console.log(this.props.input);
-
-      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${this.props.input}`)
-        .then(response => response.json())
-        .then(data => this.props.addSearchResponse(data))
-  }
-
-
   render() {
     return (
       <div>
@@ -33,7 +24,7 @@ class Header extends Component {
             <Link to="/">
               <img className="logo" src={logo} alt="logo icon"></img>
             </Link>
-            <Search onInputChange={this.onInputChange} input={this.props.input} onFormSubmit={this.onFormSubmit}/>
+            <Search onInputChange={this.onInputChange} input={this.props.input}/>
             <nav className="nav">
               <Link className="nav-item" to="/">
                 <img src={homeIcon} alt="Home icon"></img>

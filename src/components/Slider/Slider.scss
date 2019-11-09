@@ -1,2 +1,96 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
+.slick-arrow.slick-prev,
+.slick-arrow.slick-next {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 60px;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: -4.5rem;
+  &:before {
+    content: "";
+    background-color: pink;
+    height: 6px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 40px;
+    opacity: 1;
+    transform: rotate(45deg) ;
+    transition: all 0.1s;
+  }
+  &:after {
+    content: "";
+    background-color: pink;
+    height: 6px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 15px;
+    transform: rotate(-45deg);
+    transition: all 0.1s;
+  }
+  &:hover {
+    &:before {
+    top: 37px;
+    transform: rotate(35deg) ;
+    }
+    &:after {
+    top: 17px;
+    transform: rotate(-35deg) ;
+    }
+  }
+}
+
+.slick-next{
+  right: -4.5rem;
+  &:before {
+    content: "";
+    background-color: pink;
+    height: 6px;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    top: 15px;
+    opacity: 1;
+    transform: rotate(45deg);
+    transition: all 0.1s;
+
+  }
+  &:after {
+    content: "";
+    background-color: pink;
+    height: 6px;
+    width: 40px;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    transform: rotate(-45deg);
+    transition: all 0.1s;
+
+  }
+  &:hover {
+    &:before {
+    top: 17px;
+    transform: rotate(35deg) ;
+    }
+    &:after {
+    top: 37px;
+    transform: rotate(-35deg) ;
+    }
+  }
+}
+
+.slider {
+  .slick-list {
+    margin-right: -1rem;
+  }
+  .preview-item {
+    margin-right: 1rem;
+  }
+}
