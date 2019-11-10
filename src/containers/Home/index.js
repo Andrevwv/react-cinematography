@@ -126,18 +126,22 @@ class Home extends Component {
 							<h3 className="slider__category">Now Playing</h3>
 							<Slider previewItems={ returnPreviewItemsArray(nowPlayingMovies) }/>
 						</div>
+						<hr className="carousel-container__separator"/>
 						<div className="slider">
 							<h3 className="slider__category">Upcoming</h3>
 							<Slider previewItems={ returnPreviewItemsArray(upcomingMovies) }/>
 						</div>
+						<hr className="carousel-container__separator"/>
 						<div className="slider">
 							<h3 className="slider__category">Popular</h3>
 							<Slider previewItems={ returnPreviewItemsArray(popularMovies) }/>
 						</div>
+						<hr className="carousel-container__separator"/>
 						<div className="slider">
 							<h3 className="slider__category">Top Rated</h3>
 							<Slider previewItems={ returnPreviewItemsArray(movieTopRated) }/>
 						</div>
+						<hr className="carousel-container__separator"/>
 						<div className="slider">
 							<h3 className="slider__category">Popular Actors</h3>
 							<Slider previewItems={ returnPreviewItemsArray(popularPeople) }/>

@@ -5,8 +5,8 @@
 .slick-arrow.slick-next {
   position: absolute;
   top: 50%;
-  width: 40px;
-  height: 60px;
+  width: 4rem;
+  height: 6rem;
   z-index: 1;
 }
 
@@ -15,11 +15,11 @@
   &:before {
     content: "";
     background-color: pink;
-    height: 6px;
+    height: .6rem;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 40px;
+    top: 4rem;
     opacity: 1;
     transform: rotate(45deg) ;
     transition: all 0.1s;
@@ -27,21 +27,21 @@
   &:after {
     content: "";
     background-color: pink;
-    height: 6px;
+    height: .6rem;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 15px;
+    top: 1.5rem;
     transform: rotate(-45deg);
     transition: all 0.1s;
   }
   &:hover {
     &:before {
-    top: 37px;
+    top: 3.7rem;
     transform: rotate(35deg) ;
     }
     &:after {
-    top: 17px;
+    top: 1.7rem;
     transform: rotate(-35deg) ;
     }
   }
@@ -52,11 +52,11 @@
   &:before {
     content: "";
     background-color: pink;
-    height: 6px;
-    width: 40px;
+    height: .6rem;
+    width: 4rem;
     position: absolute;
     right: 0;
-    top: 15px;
+    top: 1.5rem;
     opacity: 1;
     transform: rotate(45deg);
     transition: all 0.1s;
@@ -65,22 +65,22 @@
   &:after {
     content: "";
     background-color: pink;
-    height: 6px;
-    width: 40px;
+    height: .6rem;
+    width: 4rem;
     position: absolute;
     right: 0;
-    top: 40px;
+    top: 4rem;
     transform: rotate(-45deg);
     transition: all 0.1s;
 
   }
   &:hover {
     &:before {
-    top: 17px;
+    top: 1.7rem;
     transform: rotate(35deg) ;
     }
     &:after {
-    top: 37px;
+    top: 3.7rem;
     transform: rotate(-35deg) ;
     }
   }

@@ -22,7 +22,7 @@ class SearchPage extends Component {
 		const prevArrow = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M320 128L192 256l128 128z"></path></svg>;
 		const nextArrow = <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M192 128l128 128-128 128z"></path></svg>;
 		let testRender;
-		if(this.props.searchResponse.length && this.props.settings.images.poster_sizes) {
+		if(this.props.searchResponse && this.props.settings.images && this.props.searchResponse.length && this.props.settings.images.poster_sizes) {
 			testRender = this.props.searchResponse.map( item => {
 				const { base_url, poster_sizes } = this.props.settings.images;
 				const { poster_path, genre_ids, id, title } = item;

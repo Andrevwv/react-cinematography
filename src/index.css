@@ -8,11 +8,11 @@ html {
 }
 
 .container {
-  max-width: 1440px;
+  max-width: 144rem;
   margin: 0 auto;
 
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 8rem;
+  padding-right: 8rem;
 }
 
 

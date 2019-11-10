@@ -15,7 +15,7 @@
       position: absolute;
       object-fit: cover;
       z-index: 0;
-      filter: brightness(0.5);
+      filter: brightness(0.4);
   }
 
   .name {
@@ -26,7 +26,7 @@
   }
 
   .genre {
-      opacity: 0.5;
+      opacity: 0.8;
       font-weight: normal;
       margin: 0.5em 0 0 0;
       font-size: 1.4rem;
@@ -38,7 +38,7 @@
       position: absolute;
       left: 20%;
       z-index: 1;
-      top: 20px;
+      top: 2rem;
   }
   
 }
@@ -46,7 +46,7 @@
 .backdrop-item {
   display: block;
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(100vh - 9rem);
   background-position: center 0;
   background-size: cover;
   color: white;
@@ -74,7 +74,7 @@
 
   &__category {
     text-transform: uppercase;
-    letter-spacing: 2.5px;
+    letter-spacing: 0.2rem;
     
   }
 }

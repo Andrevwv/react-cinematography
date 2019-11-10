@@ -10,7 +10,7 @@ class Search extends React.Component {
             <form className="search">
                 <input className="search__input" placeholder="Search..." type="text" value={this.props.input} onChange={this.props.onInputChange}></input>
                 <Link className="nav-item" to={currentPath}>
-                    <button className="search__btn">
+                    <button className="search__btn" onClick={this.props.onFormSubmit}>
                         <img src={searchIcon} alt="search icon">
                         </img>
                     </button>
