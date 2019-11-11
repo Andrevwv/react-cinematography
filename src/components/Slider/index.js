@@ -4,7 +4,6 @@ import SlickSlider from "react-slick";
 
 function Slider(props) {
 	let settings = {
-		dots: true,
 		infinite: true,
 		speed: 500,
 		slidesToShow: props.previewItems.length > 4 ? 5 : props.previewItems.length,
